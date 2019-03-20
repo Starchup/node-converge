@@ -17,52 +17,15 @@ var Converge = new converge(conf);
 #### Usage
 
 ```
-Converge.Customer.Create(
-{
-    info:
-    {
-        id: 1,
-        businessName: 'MI6',
-        firstName: 'James',
-        lastName: 'Bond',
-        phone: '(007) 007-0007',
-        email: 'james@bond.com'
-    },
-    address:
-    {
-        street: '1 Secret Avenue',
-        unit: '0',
-        city: 'London'
-    }
-}).then(function (res)
-{
-    // Mission success
-}).catch(function (err)
-{
-    // Bond blew things up
-});
-```
-```
-Converge.Customer.Update(
-{
-    foreignKey: __your_customer_id__,
-    info:
-    {
-        id: 1,
-        businessName: 'MI6',
-        firstName: 'James',
-        lastName: 'Smith'
-    }
-});
-```
-```
 Converge.Card.Create(
 {
-    foreignKey: __your_customer_id__,
-
-    nameOnCard: 'Q',
-    cardNumber: '_sandbox_card_number_',
-    exp: '0199'
+    cardNumber: 'xxxxxxxxxxxxxxxx',
+    exp: 'xx/xx',
+    cvv: 'xxx',
+    firstName: 'x',
+    lastName: 'x',
+    address: 'x',
+    zipcode: 'xxxxx'
 });
 ```
 ```
