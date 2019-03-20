@@ -6,10 +6,10 @@ var expect = require('chai').expect;
 var converge = require('./converge.js');
 var Converge = new converge(
 {
-    merchant: '704143',
-    username: 'democpos',
-    pin: 'KR1OONFG7XUFW5YSU91TSXX1PDMRHYRCXUTECRE2B31BXTFM31Y6XZ094NF6L7T5',
-    environment: 'Production'
+    merchant: 'xxxx',
+    username: 'xxxx',
+    pin: 'xxxx',
+    environment: 'xxxx'
 });
 
 var cardForeignId, transactionForeignId;
@@ -19,12 +19,12 @@ describe('Card Methods', function ()
     this.timeout(10000);
 
     var data = {
-        cardNumber: '4427321115995299',
+        cardNumber: 'xxxxxxxxxxxxxx',
         exp: '02/20',
         cvv: '232',
         firstName: 'Geoffroy',
         lastName: 'Lesage',
-        address: '115 Henry Street 5F',
+        address: '1 Main StreetF',
         zipcode: '11201'
     };
 
@@ -73,8 +73,6 @@ describe('Card Methods', function ()
             transactionForeignKey: transactionForeignId
         }).then(function (res)
         {
-            console.log('res');
-            console.log(res);
             expect(token.foreignId).to.exist; // jshint ignore:line
             done();
         }).catch(done);
@@ -88,8 +86,6 @@ describe('Card Methods', function ()
             amount: 0.5
         }).then(function (foreignId)
         {
-            console.log('foreignId');
-            console.log(foreignId);
             expect(foreignId).to.exist; // jshint ignore:line
             done();
         }).catch(done);
