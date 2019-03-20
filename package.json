@@ -1,6 +1,6 @@
 {
     "name": "node-converge",
-    "version": "1.0.0",
+    "version": "1.0.3",
     "main": "./converge",
     "description": "Elavon Converge API wrapper for Node.js",
     "author":
