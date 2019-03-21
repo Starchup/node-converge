@@ -24,7 +24,7 @@ describe('Card Methods', function ()
         cvv: '232',
         firstName: 'Geoffroy',
         lastName: 'Lesage',
-        address: '1 Main StreetF',
+        address: '1 Main Street',
         zipcode: '11201'
     };
 
@@ -42,7 +42,7 @@ describe('Card Methods', function ()
     {
         Converge.Card.Get(
         {
-            foreignKey: 'stuff'
+            foreignKey: cardForeignId
 
         }).then(function (res)
         {
