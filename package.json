@@ -1,6 +1,6 @@
 {
     "name": "node-converge",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "main": "./converge",
     "description": "Elavon Converge API wrapper for Node.js",
     "author":
@@ -24,6 +24,7 @@
     "dependencies":
     {
         "fast-xml-parser": "2.7.4",
+        "got": "9.6.0",
         "request": "2.88.0",
         "request-promise": "4.2.2"
     },
