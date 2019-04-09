@@ -30,7 +30,7 @@ var converge = function (config)
             xmlTransaction += '<ssl_transaction_type>ccgettoken</ssl_transaction_type>\n';
             xmlTransaction += '<ssl_add_token>Y</ssl_add_token>\n';
             xmlTransaction += '<ssl_verify>Y</ssl_verify>\n';
-            xmlTransaction += '<ssl_test_mode>Y</ssl_test_mode>\n';
+            xmlTransaction += '<ssl_test_mode>' + self.TEST_MODE + '</ssl_test_mode>\n';
             xmlTransaction += '<ssl_show_form>false</ssl_show_form>';
             xmlTransaction += '<ssl_result_format>HTML</ssl_result_format>\n';
             xmlTransaction += '<ssl_cvv2cvc2_indicator>1</ssl_cvv2cvc2_indicator>\n';
@@ -78,7 +78,7 @@ var converge = function (config)
             xmlTransaction += '<ssl_pin>' + self.CONFIG.pin + '</ssl_pin>\n';
 
             xmlTransaction += '<ssl_transaction_type>ccquerytoken</ssl_transaction_type>\n';
-            xmlTransaction += '<ssl_test_mode>Y</ssl_test_mode>\n';
+            xmlTransaction += '<ssl_test_mode>' + self.TEST_MODE + '</ssl_test_mode>\n';
             xmlTransaction += '<ssl_show_form>false</ssl_show_form>';
             xmlTransaction += '<ssl_result_format>HTML</ssl_result_format>\n';
             xmlTransaction += '<ssl_entry_mode>01</ssl_entry_mode>\n';
@@ -134,7 +134,7 @@ var converge = function (config)
             xmlTransaction += '<ssl_pin>' + self.CONFIG.pin + '</ssl_pin>\n';
 
             xmlTransaction += '<ssl_transaction_type>ccsale</ssl_transaction_type>\n';
-            xmlTransaction += '<ssl_test_mode>Y</ssl_test_mode>\n';
+            xmlTransaction += '<ssl_test_mode>' + self.TEST_MODE + '</ssl_test_mode>\n';
             xmlTransaction += '<ssl_show_form>false</ssl_show_form>';
             xmlTransaction += '<ssl_result_format>HTML</ssl_result_format>\n';
             xmlTransaction += '<ssl_entry_mode>01</ssl_entry_mode>\n';
@@ -178,7 +178,7 @@ var converge = function (config)
             xmlTransaction += '<ssl_pin>' + self.CONFIG.pin + '</ssl_pin>\n';
 
             xmlTransaction += '<ssl_transaction_type>ccvoid</ssl_transaction_type>\n';
-            xmlTransaction += '<ssl_test_mode>Y</ssl_test_mode>\n';
+            xmlTransaction += '<ssl_test_mode>' + self.TEST_MODE + '</ssl_test_mode>\n';
             xmlTransaction += '<ssl_show_form>false</ssl_show_form>';
             xmlTransaction += '<ssl_result_format>HTML</ssl_result_format>\n';
             xmlTransaction += '<ssl_entry_mode>01</ssl_entry_mode>\n';
@@ -222,7 +222,7 @@ var converge = function (config)
             xmlTransaction += '<ssl_pin>' + self.CONFIG.pin + '</ssl_pin>\n';
 
             xmlTransaction += '<ssl_transaction_type>ccreturn</ssl_transaction_type>\n';
-            xmlTransaction += '<ssl_test_mode>Y</ssl_test_mode>\n';
+            xmlTransaction += '<ssl_test_mode>' + self.TEST_MODE + '</ssl_test_mode>\n';
             xmlTransaction += '<ssl_show_form>false</ssl_show_form>';
             xmlTransaction += '<ssl_result_format>HTML</ssl_result_format>\n';
             xmlTransaction += '<ssl_entry_mode>01</ssl_entry_mode>\n';
@@ -279,7 +279,12 @@ var converge = function (config)
     self.CONFIG = JSON.parse(JSON.stringify(config));
 
     self.baseUrl = sandbox;
-    if (self.CONFIG.environment === 'Production') self.baseUrl = production;
+    self.TEST_MODE = 'Y';
+    if (self.CONFIG.environment === 'Production')
+    {
+        self.TEST_MODE = 'N';
+        self.baseUrl = production;
+    }
 
     return self;
 };
