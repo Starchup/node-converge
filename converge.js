@@ -104,7 +104,7 @@ var converge = function (config)
 
                 if (resJSON.txn.ssl_result === 1)
                 {
-                    throw new Error('Card could not be tokenized: ' + resJSON.txn.ssl_result_message);
+                    throw new Error('Could not get card: ' + resJSON.txn.ssl_result_message);
                 }
 
                 var expDate = String(resJSON.txn.ssl_exp_date);
