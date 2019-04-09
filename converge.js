@@ -115,7 +115,7 @@ var converge = function (config)
                     cardHolderName: resJSON.txn.ssl_first_name + ' ' + resJSON.txn.ssl_last_name,
                     expirationMonth: expMonth,
                     expirationYear: expYear,
-                    last4: resJSON.txn.ssl_card_number.slice(-4),
+                    last4: resJSON.txn.ssl_account_number.slice(-4),
                     imageUrl: null,
                     cardType: resJSON.txn.ssl_card_type,
                     postalCode: resJSON.txn.ssl_avs_zip
