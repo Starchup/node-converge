@@ -71,9 +71,9 @@ describe('Card Methods', function ()
         Converge.Card.Void(
         {
             transactionForeignKey: transactionForeignId
-        }).then(function (res)
+        }).then(function (foreignId)
         {
-            expect(token.foreignId).to.exist; // jshint ignore:line
+            expect(foreignId).to.exist; // jshint ignore:line
             done();
         }).catch(done);
     });
