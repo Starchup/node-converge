@@ -64,7 +64,9 @@ var converge = function (config)
                     throw new Error('Card could not be tokenized: ' + resJSON.txn.ssl_result_message);
                 }
 
-                return resJSON.txn.ssl_token;
+                return {
+                    foreignId: resJSON.txn.ssl_token
+                };
             });
         },
         Get: function (options)
