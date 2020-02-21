@@ -166,7 +166,10 @@ var converge = function (config)
                     throw new Error('Card could not be tokenized: ' + resJSON.txn.ssl_result_message);
                 }
 
-                return resJSON.txn.ssl_txn_id;
+                return {
+                    foreignId: resJSON.txn.ssl_txn_id,
+                    amount: options.amount
+                };
             });
         },
         Void: function (options)
@@ -209,7 +212,9 @@ var converge = function (config)
                     throw new Error('Card could not be tokenized: ' + resJSON.txn.ssl_result_message);
                 }
 
-                return resJSON.txn.ssl_txn_id;
+                return {
+                    foreignId: resJSON.txn.ssl_txn_id
+                };
             });
         },
         Refund: function (options)
@@ -254,7 +259,10 @@ var converge = function (config)
                     throw new Error('Card could not be tokenized: ' + resJSON.txn.ssl_result_message);
                 }
 
-                return resJSON.txn.ssl_txn_id;
+                return {
+                    foreignId: resJSON.txn.ssl_txn_id,
+                    amount: options.amount
+                };
             });
         }
     };
