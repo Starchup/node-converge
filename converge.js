@@ -3,7 +3,6 @@
  */
 var xmlP = require('fast-xml-parser');
 var rp = require('request-promise');
-var got = require('got');
 
 var production = 'https://api.convergepay.com/VirtualMerchant/processxml.do';
 var sandbox = 'https://api.demo.convergepay.com/VirtualMerchantDemo/processxml.do';

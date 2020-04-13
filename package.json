@@ -24,7 +24,6 @@
     "dependencies":
     {
         "fast-xml-parser": "2.7.4",
-        "got": "9.6.0",
         "request": "2.88.0",
         "request-promise": "4.2.2"
     },
