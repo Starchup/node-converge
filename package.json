@@ -1,6 +1,6 @@
 {
     "name": "node-converge",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "main": "./converge",
     "description": "Elavon Converge API wrapper for Node.js",
     "author":
@@ -23,20 +23,20 @@
     },
     "dependencies":
     {
-        "fast-xml-parser": "2.7.4",
-        "request": "2.88.0",
-        "request-promise": "4.2.2"
+        "fast-xml-parser": "3.16.0",
+        "request": "2.88.2",
+        "request-promise": "4.2.5"
     },
     "devDependencies":
     {
-        "mocha": "3.2.0",
-        "chai": "3.5.0",
-        "jshint": "2.9.4"
+        "mocha": "7.1.2",
+        "chai": "4.2.0",
+        "jshint": "2.11.0"
     },
     "scripts":
     {
         "pretest": "jshint .",
-        "test": "mocha --timeout 5000"
+        "test": "mocha --timeout 5000 --exit"
     },
     "readmeFilename": "README.md",
     "bugs":
